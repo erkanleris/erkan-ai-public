@@ -204,8 +204,10 @@ function vitePluginStorageProxy(): Plugin {
 }
 
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+const githubPagesBase = process.env.GITHUB_ACTIONS ? "/erkan-ai-public/" : "/";
 
 export default defineConfig({
+  base: githubPagesBase,
   plugins,
   resolve: {
     alias: {

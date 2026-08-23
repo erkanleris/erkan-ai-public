@@ -3,11 +3,8 @@
  * القاعدة الأسلوبية: لا لوحات تحكم ولا تشتيت؛ مركز الثقل هو الكلمة والسؤال والجواب المحلي.
  */
 import { FormEvent, useEffect, useMemo, useState } from "react";
-import { Check, ChevronLeft, Clock3, RotateCcw, Send, Sparkles } from "lucide-react";
+import { Check, ChevronLeft, Clock3, RotateCcw, Sparkles } from "lucide-react";
 import { toast } from "sonner";
-
-const brandSymbol = "/manus-storage/erkan-symbol_3fdbeab7.png";
-const horizonImage = "/manus-storage/erkan-neural-horizon_07178e9e.png";
 
 type Prompt = {
   type: "سؤال بالفصحى" | "كلمة بالفصحى";
@@ -105,7 +102,7 @@ export default function Home() {
 
       <header className="site-header">
         <a className="site-brand" href="#main-question" aria-label="ERKAN AI">
-          <img src={brandSymbol} alt="رمز ERKAN AI" />
+          <span className="brand-glyph" aria-hidden="true"><i /><b /></span>
           <span><b>ERKAN AI</b><small>مساحة اللهجة</small></span>
         </a>
         <div className="header-note"><span /> سؤال واحد · دقيقة واحدة</div>
@@ -120,11 +117,11 @@ export default function Home() {
         </aside>
 
         <div className="stage-core">
-          <div className="stage-art" aria-hidden="true"><img src={horizonImage} alt="" /></div>
+          <div className="stage-art" aria-hidden="true" />
           <div className="question-card">
           <div className="card-topline">
             <span className="prompt-type"><Sparkles size={14} /> {currentPrompt.type}</span>
-            <span className="topline-meta"><span className="card-brand-stamp"><img src={brandSymbol} alt="" /><b>ERKAN AI</b></span><span className="question-count">{String(promptIndex + 1).padStart(2, "0")} / {String(prompts.length).padStart(2, "0")}</span></span>
+            <span className="topline-meta"><span className="card-brand-stamp"><span className="brand-glyph" aria-hidden="true"><i /><b /></span><b>ERKAN AI</b></span><span className="question-count">{String(promptIndex + 1).padStart(2, "0")} / {String(prompts.length).padStart(2, "0")}</span></span>
           </div>
 
           <div className="question-zone">
