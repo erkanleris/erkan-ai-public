@@ -1,26 +1,12 @@
 /**
- * ERKAN AI — نبض المنشور: تطبيق غامر داكن يجعل مساحة المحادثة محور التجربة.
- * القاعدة الأسلوبية: طبقات زجاجية محدودة، أزرق إشارة، وإيقاع عربي واضح من اليمين إلى اليسار.
+ * ERKAN AI — نبض المنشور المبسّط: موقع صفحة واحدة بلا مسارات فرعية.
+ * هذا يمنع أي تعارض توجيه عند النشر ضمن رابط GitHub Pages الفرعي.
  */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
-import { Route, Router as WouterRouter, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-
-const routerBase = import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL.replace(/\/$/, "");
-
-function AppRoutes() {
-  return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/404" component={NotFound} />
-      <Route component={NotFound} />
-    </Switch>
-  );
-}
 
 export default function App() {
   return (
@@ -28,9 +14,7 @@ export default function App() {
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster richColors position="top-center" />
-          <WouterRouter base={routerBase}>
-            <AppRoutes />
-          </WouterRouter>
+          <Home />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
