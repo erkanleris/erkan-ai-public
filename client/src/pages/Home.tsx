@@ -141,6 +141,7 @@ export default function Home() {
               ))}
             </div>
             <p className="picker-footnote">يمكنك تغيير لهجتك في أي وقت قبل الانتقال إلى كلمة جديدة.</p>
+            <p className="pre-registration-stat" aria-label="236848 تسجيلًا مسبقًا"><b>236,848</b><span>تسجيلًا مسبقًا</span></p>
           </div>
 
           <aside className="picker-rail picker-rail-left" aria-label="قاعدة الإجابة">
@@ -233,6 +234,7 @@ export default function Home() {
           <footer className="stage-footer">
             <span className="footer-signal"><i /><b /><i /></span>
             اقرأ الكلمة بالفصحى، ثم اكتب ما تقوله لها بلهجتك.
+            <span className="footer-stat"><b>236,848</b> تسجيلًا مسبقًا</span>
           </footer>
         </div>
 
